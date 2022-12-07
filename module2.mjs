@@ -1,7 +1,7 @@
 const a = "Abhi";
 const b = "Siddu";
-const c="Ashiq";
-const d = "Karan";
+const c="Don";
+const d = "Kamal";
 
 export default b;
 export {a};
