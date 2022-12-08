@@ -5,6 +5,7 @@ import Text from "./components/Text";
 import React from "react";
 import Alert from "./components/Alert";
 import About from "./components/About";
+// import Footers from "./components/Footers";
 import {
   BrowserRouter,
   Routes,
@@ -60,6 +61,8 @@ function App() {
               /></div>} />
                 <Route path="/about" element={ <About />} />
       </Routes>
+
+      {/* <Footers /> */}
     </BrowserRouter>
           
        

@@ -61,16 +61,16 @@ props.showAlert("The text is Capitalised","Success")
             rows="10"
           ></textarea>
         </div>
-        <button className="btn btn-primary  " onClick={convertToUpper}>
+        <button  disabled={text.length===0}className="btn btn-primary  " onClick={convertToUpper}>
           Covert to UpperCase
         </button>
-        <button className="btn btn-primary mx-2" onClick={convertToLower}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2" onClick={convertToLower}>
           Covert to LowerCase
         </button>
-        <button className="btn btn-primary mx-2" onClick={capitalize}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2" onClick={capitalize}>
           Capitalize
         </button>
-        <button className="btn btn-primary mx-2" onClick={clearText}>
+        <button  disabled={text.length===0}className="btn btn-primary mx-2" onClick={clearText}>
           Clear Text
         </button>
 
@@ -80,10 +80,10 @@ props.showAlert("The text is Capitalised","Success")
       <div className="container my-4" style={{color:props.mode=='dark'?'white':'black'}}>
         <h2>Text Summary</h2>
         <p >
-          The text contains {text.split(" ").length} words and {text.length}{" "}
+          The text contains {text.split( /\s +/).filter((element)=> {return element.length!==0}).length} words and {text.length}{" "}
           characters
         </p>
-        <p >This text can be read in {0.008 * text.split(" ").length} minutes</p>
+        <p >This text can be read in {0.008 * text.split(" ").filter((element)=> {return element.length!==0}).length} minutes</p>
         <h2>Preview</h2>
         <p>{text.length>0?text:"Enter the text to preview"}</p>
       </div>
